@@ -2,11 +2,14 @@
 # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
 #
 # Binaries for programs and plugins
+metrics.log
+
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
+
 
 # Test binary, built with `go test -c`
 *.test
