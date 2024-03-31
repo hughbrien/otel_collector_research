@@ -1,0 +1,49 @@
+processors:
+  resourcedetection:
+    detectors: [env, system]
+  cumulativetodelta:
+  batch:
+    send_batch_size: 10000
+    timeout: 10s
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+  hostmetrics:
+    collection_interval: 300s
+    scrapers:
+      cpu:
+      disk:
+      filesystem:
+      load:
+      memory:
+      network:
+      paging:
+exporters:
+  debug:
+  otlp/uptrace:
+    endpoint: https://otlp.uptrace.dev:4317
+    tls: { insecure: false }
+    headers:
+      uptrace-dsn: 'https://SVOBpQC3jBtAfROJ0vRH5A@api.uptrace.dev?grpc=4317'
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/uptrace, debug]
+    metrics:
+      receivers: [otlp]
+      processors: [cumulativetodelta, batch]
+      exporters: [otlp/uptrace, debug]
+    metrics/host:
+      receivers: [hostmetrics]
+      processors: [cumulativetodelta, batch, resourcedetection]
+      exporters: [otlp/uptrace, debug]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/uptrace, debug]

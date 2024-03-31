@@ -1,0 +1,14 @@
+version: v0.1.0 # Use the appropriate version for your build
+otelcol_version: "0.49.0" # Specify the OpenTelemetry Collector version to build against
+output_path: /Users/hbrien/Software/MacosOtelCollector/test_collector
+config:
+  receivers:
+    - prometheus
+  processors:
+    - batch
+  exporters:
+    - file
+  extensions:
+    - health_check
+    - pprof
+    - zpages
