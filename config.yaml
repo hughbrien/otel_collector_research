@@ -1,3 +1,10 @@
+extensions:
+  health_check: {}
+  pprof:
+    endpoint: 0.0.0.0:1777
+  zpages:
+    endpoint: 0.0.0.0:55679
+    
 receivers:
   prometheus:
     config:
@@ -14,17 +21,9 @@ exporters:
   file:
     path: ./metrics.log
 
-extensions:
-  health_check: {}
-  pprof:
-    endpoint: 0.0.0.0:1777
-  zpages:
-    endpoint: 0.0.0.0:55679
 service:
   extensions: [ health_check, pprof, zpages ]
-
   pipelines:
-
     metrics:
       receivers: [prometheus]
       processors: [batch]
