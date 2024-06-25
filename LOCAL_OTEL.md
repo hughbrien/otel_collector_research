@@ -1,3 +1,8 @@
+## Uptrace 
+
+[Local Uptrace](http://localhost:14318/)
+
+
 ## Extensions : 
 https://github.com/open-telemetry/opentelemetry-collector/tree/main/extension
 https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension
