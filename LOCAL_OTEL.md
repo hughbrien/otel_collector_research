@@ -3,6 +3,9 @@
 [Local Uptrace](http://localhost:14318/)
 
 
+## Node Exporter
+[Node Exporter](http://localhost:9100/metrics)
+
 ## Extensions : 
 https://github.com/open-telemetry/opentelemetry-collector/tree/main/extension
 https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension
