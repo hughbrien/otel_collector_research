@@ -1,11 +1,11 @@
 There are large number of configuration considerations when configuring a collector. To start,  there is the overall configuration based on the location and context :
 
-•Services
-•Receivers
-•Processors
-•Exporters
-•Extensions
-•Connectors
+- Services
+- Receivers
+- Processors
+- Exporters
+- Extensions
+- Connectors
 
 
 ### What all APM (pre-Observabiltiy) Vendors did prior to the present was to make assumptions about their agents they created.
