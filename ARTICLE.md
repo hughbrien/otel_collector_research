@@ -1,3 +1,5 @@
+# Ideas about Open Telemetry 
+
 There are large number of configuration considerations when configuring a collector. To start,  there is the overall configuration based on the location and context :
 
 - Services
@@ -39,7 +41,7 @@ Does your collector work to a single purpose or multiple.
 - A database monitor that is able to monitor 1 or Many databases.  
 - Here you consider whethor not you want to scale very large
 
-# Develop
+## Develop
 
 Configuring an OpenTelemetry Collector to suit specific monitoring needs can be a complex process, given the broad spectrum of scalability, performance requirements, and the vast array of available components. The size and scale of the deployment significantly influence configuration choices, as larger-scale deployments necessitate more thoughtful planning around resource allocation, data throughput, and redundancy to ensure reliability and efficiency.
 
